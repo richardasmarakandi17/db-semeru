@@ -11,21 +11,18 @@
 </head>
 <body>
         <div class="card mx-auto vertical-center" style="width: 18rem;">
-        <img src="https://www.its.ac.id/wp-content/uploads/2020/07/Lambang-ITS-2-300x300.png" class="card-img-top" alt="logo its" style="width:150px;height:150px;">
+            <div class="d-flex justify-content-center">
+                <img src="https://www.its.ac.id/wp-content/uploads/2020/07/Lambang-ITS-2-300x300.png" class="card-img-top mt-3" alt="logo its" style="width:100px;height:100px;">
+            </div>
         <div class="card-body" style="text-align:center;">
             <form>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
