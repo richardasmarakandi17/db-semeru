@@ -1,5 +1,18 @@
 <?php
+require 'functions.php';
 
+if (isset($_POST['submit'])) {
+  global $con;
+  if (insertItem($_POST) > 0) {
+    echo "<script>
+            alert('item berhasil ditambahkan');
+          </script>";
+  } else {
+    echo mysqli_error($con);
+  }
+}
+
+// echo (bool)$_POST['kelayakan'];
 ?>
 
 <!DOCTYPE html>
@@ -15,29 +28,25 @@
 </head>
 
 <body>
-  <div class="card card-body mx-auto" style="width: 30rem; margin-top: 10rem;">
+  <div class="card card-body mx-auto" style="width: 30rem; margin-top: 15rem;">
     <h1>Tambahkan Barang</h1>
     <form action="" method="POST">
       <div class="mb-3">
         <label for="namaBarangInput" class="form-label">Nama Barang</label>
-        <input type="text" class="form-control" id="namaBarangInput">
+        <input type="text" class="form-control" id="namaBarangInput" name="nama-barang">
       </div>
       <div class="mb-3">
         <label for="jumlahInput" class="form-label">Jumlah Barang</label>
-        <input class="form-control" id="jumlahInput"></input>
+        <input class="form-control" type="number" min="0" id="jumlahInput" name="jumlah"></input>
       </div>
       <div class="mb-3">
-        <label for="kelayakanInput" class="form-label">Kelayakan Barang</label>
-        <select class="form-select" aria-label="Default select example" id="kelayakanInput">
+        <label for="kondisiInput" class="form-label">Kondisi Barang</label>
+        <select class="form-select" aria-label="Default select example" id="kondisinInput" name="kondisi">
           <option selected value="1">Layak</option>
-          <option value="2">Tidak Layak</option>
+          <option value="0">Tidak Layak</option>
         </select>
       </div>
-      <div class="mb-3">
-        <label for="keteranganInput" class="form-label">Keterangan</label>
-        <textarea class="form-control" id="keteranganInput" rows="3"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary" name="add-data">Submit</button>
+      <button type="submit" class="btn btn-primary" name="submit">Submit</button>
   </div>
   </form>
 </body>
