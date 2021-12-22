@@ -42,7 +42,7 @@ require 'query_list.php';
                                 <td class=""><?= $items['IL_jumlah'] ?></td>
                                 <td class=""><?= $items['IL_kondisi']  === '1' ? 'Layak' : 'Tidak Layak' ?></td>
                                 <td class="">
-                                    <button type="button" class="btn btn-primary">Edit</button>
+                                    <a  href="edit.php?id=<?=$items['IL_id']?>"><button type="button" class="btn btn-primary">Edit</button></a>
                                 </td>
                             </div>
                         </tr>
